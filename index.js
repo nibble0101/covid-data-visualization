@@ -1,6 +1,5 @@
 /*
    1. There is a challenge of extracting data for Somaliland 
-   2. Challenge of applying a hover effect for countries without data like Somaliland and Greenland
 */
 
 const urlMapData = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -12,8 +11,8 @@ const urlCountryCodes = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-
 
 
 const graphParams = {
-        width: 960,
-        height: 500,
+        width: 900,
+        height: 400,
         padTop: 50,
         padBottom: 50,
         padLeft: 50,
@@ -28,11 +27,11 @@ const {
     padRight
    } = graphParams;
 
-const deleteFromMap = [160, 167, 174];
 const formatTime = d3.timeFormat("%B %d, %Y");
 const body = d3.select('body');
-const worldStat = body.append('div')
-                      .attr('class', 'world-stat-wrapper')
+             body.append('h1')
+                 .text('Covid-19 World Statistics')
+               
 const toolTip = body.append('div')
                     .attr('class', 'tooltip')
 const svg = body.append('svg')
@@ -67,7 +66,7 @@ function mouseoverHandler(){
    
       toolTip.style('opacity', '1')
       toolTip.style('top', d3.event.pageY + 'px')
-      toolTip.style('left', d3.event.pageX - 250 + 'px')
+      toolTip.style('left', d3.event.pageX - 200 + 'px')
       
    }else{
       toolTip.append('h2')
@@ -75,14 +74,14 @@ function mouseoverHandler(){
             toolTip.append('div')
                   .text('Date: ' + formatTime(dateToday))
             toolTip.append('div')
-                  .text('Cases: ' + data.data.cases)
+                   .text('Cases: ' + d3.format(',')(data.data.cases))
             toolTip.append('div')
-                  .text('Deaths: ' + data.data.deaths)
+                  .text('Deaths: ' + d3.format(',')(data.data.deaths))
             toolTip.append('div')
-                   .text( 'Recoveries: ' + data.data.recoveries)
+                   .text( 'Recoveries: ' + d3.format(',')(data.data.recoveries))
             toolTip.style('opacity', '1')
             toolTip.style('top', d3.event.pageY + 'px')
-            toolTip.style('left', d3.event.pageX - 250 + 'px')
+            toolTip.style('left', d3.event.pageX - 200 + 'px')
 
 
    }
@@ -192,4 +191,10 @@ const promises = Promise.all(
 
                   })
 
-
+body.append('div')
+    .attr('class', 'footer')
+    .append('span')
+    .text('Data Source: ')
+    .append('a')
+    .attr('href', 'https://github.com/CSSEGISandData/COVID-19')
+    .text('Johns Hopkins University(CSSE)')

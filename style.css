@@ -3,6 +3,11 @@ body{
     background-color: black;
     font-family: 'Raleway', sans-serif;
 }
+h1{
+    color: whitesmoke;
+    text-align: center;
+    font-weight: 100;
+}
 svg{
     display: block;
     margin: 0 auto;
@@ -18,7 +23,7 @@ svg{
 .tooltip{
     background-color: #361818;
     width: 150px;
-    height: 120px;
+    max-height: 150px;
     padding: 1em;
     color: white;
     position: absolute;
@@ -32,4 +37,19 @@ svg{
     padding: 0;
     margin: 0;
     color: green;
+}
+.footer{
+    text-align: center;
+    padding: 1em;
+    color: whitesmoke;
+
+
+}
+.footer a{
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 500ms ease-in-out;
+}
+.footer a:hover{
+    color: greenyellow;
 }
