@@ -1,5 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+body{
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
 svg{
     display: block;
     margin: 0 auto;
-    background-color: skyblue;
+    background-color: skyblue;  
+}
+.country{
+    fill: #947b3cb5;
+    stroke: #bf6767;
+}
+.sphere{
+    fill: #4d4d6d;
+}
+.tooltip{
+    background-color: #361818;
+    width: 150px;
+    height: 120px;
+    padding: 1em;
+    color: white;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1000ms linear;
+    box-shadow: 1px 1px 20px;
+    pointer-events: none;
+    
+}
+.tooltip h2{
+    padding: 0;
+    margin: 0;
+    color: green;
 }
