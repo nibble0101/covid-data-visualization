@@ -3,8 +3,13 @@ body{
     background-color: black;
     font-family: 'Raleway', sans-serif;
 }
-h1{
+.main-header{
     color: whitesmoke;
+    text-align: center;
+    font-weight: 100;
+}
+.sub-header{
+    color: #6ed6ef;
     text-align: center;
     font-weight: 100;
 }
@@ -14,7 +19,6 @@ svg{
     background-color: skyblue;  
 }
 .country{
-    fill: #947b3cb5;
     stroke: #bf6767;
 }
 .sphere{
@@ -36,20 +40,25 @@ svg{
 .tooltip h2{
     padding: 0;
     margin: 0;
-    color: green;
-}
-.footer{
+    color: #6ed6ef;
     text-align: center;
-    padding: 1em;
+}
+.source, .retrieval-time{
+    text-align: center;
+    padding: 0.3em 1em;
     color: whitesmoke;
 
 
 }
-.footer a{
+.source a{
     color: whitesmoke;
     text-decoration: none;
     transition: color 500ms ease-in-out;
 }
-.footer a:hover{
+.source span, .retrieval-time span:nth-child(1){
+    color: #6ed6ef;
+}
+.source a:hover{
     color: greenyellow;
 }
+
